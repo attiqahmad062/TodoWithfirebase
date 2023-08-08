@@ -1,6 +1,9 @@
+'use client'
 import './globals.css'
+import firebase from 'firebase/app';
 import { Inter } from 'next/font/google'
-
+import firebaseConfig from './firebase'
+import { useEffect } from 'react'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
@@ -9,6 +12,12 @@ export const metadata = {
 }
 
 export default function RootLayout({ children }) {
+  // useEffect(() => {
+  //   if (!firebase?.apps.length) {
+  //     firebase?.initializeApp(firebaseConfig);
+  //     console.log('Firebase is connected and initialized.');
+  //   }
+  // }, []);
   return (
     <html lang="en">
       <body className={inter.className}>{children}</body>
